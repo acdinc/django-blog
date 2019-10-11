@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Anasayfa {% endblock %}
+
+{% block body %}
+    <p>
+        {% if request.user.is_authenticated %}
+                {{request.user.get_full_name}} olarak giriş yapıldı..
+        {% else %}
+                Giriş Yapılmadı!
+        {% endif %}
+    </p>
+{% endblock %}
